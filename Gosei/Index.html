@@ -7,35 +7,154 @@
     <title>GoseiHome</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/Gosei/styles/index.css">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6895b0;">
-        <div class="container">
-          <a class="navbar-brand" href="Index.html">GoseiWebshop</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="Index.html">GoseiWebshop</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-              <li class="nav-item btn btn-danger" onclick="downloadData()">
-                <a class="nav-link active disabled" style="color: #FFC107;" href="#">Download</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-warning" type="submit">Search</button>
-            </form>
-          </div>
+        <form class="d-flex w-75 mx-3">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-warning" type="submit">Search</button>
+        </form>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="#"><i class="bi bi-bag"></i></a>
+            </li>
+          
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="Login.html">Login</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+    </div>
+  </nav>
 
-      <div class="container">
-          <div class="moto mt-5">
-            <h1>Welcome to <span class="moto-outline-text" style="color: #FFC107;">GoseiWebshop.</span></h1>
-          </div>
+  <div class="container">
+    <div class="carousel-container mt-5"></div>
+  </div>
+
+  <div class="container">
+    <hr class="mt-5 w-100">
+  </div>
+
+  <div class="container">
+    <h1 class="promotional-products mt-5">Promotional products</h1>
+  </div>
+
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/first.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone X</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
       </div>
-      <script type="module" src="/Gosei/scripts/backend.js"></script>
-      </body>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/first.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 11</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/first.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 12</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/first.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 13</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <hr class="mt-5 w-100">
+  </div>
+
+  <div class="container">
+    <h1 class="product-categories mt-5">Shop by categories</h1>
+  </div>
+
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/second.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone X</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/second.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 11</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/second.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 12</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/second.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 13</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <button type="button" class="btn btn-outline-warning w-50 mt-5 text">Browse all categories</button> 
+  </div>
+
+  <div class="bottom-section mt-5 mb-5">
+    <div class="container">
+      <h2 class="footer-title pt-5">GoseiWebshop</h1>
+      <h4 class="footer-second-title pt-3">Sign up to our newsletter!</h4>
+      <p class="footer-paragraph">Be the first to know our special offers, new products launches and events!</p>
+
+      <form action="#">
+        <div class="form-group">
+          <input type="text" class="form-control w-25" id="email-address" placeholder="Email Address">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
 </html>

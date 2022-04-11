@@ -3,5 +3,30 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.carousel-container {
+  border: 1px solid gray;
+  width: 1000px;
+  height: 500px;
+  background-color: gray;
+  margin: auto;
+}
+
+.promotional-products {
+  margin-left: 46px;
+  font-weight: 500;
+}
+
+.product-categories {
+  margin-left: 46px;
+  font-weight: 500;
+}
+
+.bottom-section {
+  width: 100%;
+  height: 350px;
+  background-color: gray;
 }
 /*# sourceMappingURL=index.css.map */
