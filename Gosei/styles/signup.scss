@@ -1,5 +1,15 @@
+@mixin font-family(){
+    font-family: 'Work Sans', sans-serif;
+}
+
+@mixin titleStyle(){
+    margin-left: 46px;
+    font-weight: map-get($font-weights, 'bold');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    @include font-family();
 }

@@ -3,5 +3,86 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.promotional-products {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.product-categories {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.see-all-promotional-products {
+  margin-right: 10px;
+}
+
+.see-all-categories {
+  margin-right: 10px;
+}
+
+.bottom-section {
+  width: 100%;
+  height: 350px;
+  background-color: #DDDDDD;
+}
+
+.bottom-section .second-container .category:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .second-container .first-category:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .second-container .second-category:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .second-container .third-category:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .second-container .fourth-category:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .second-container .fifth-category:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .third-container .help:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .third-container .first-help:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .third-container .second-help:hover {
+  text-decoration: underline;
+}
+
+.bottom-section .third-container .third-help:hover {
+  text-decoration: underline;
+}
+
+.card {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  border: 1px solid #000000;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 /*# sourceMappingURL=index.css.map */

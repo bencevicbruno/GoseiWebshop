@@ -1,0 +1,30 @@
+$black-color: #000000;
+$white-color: #FFFFFF;
+
+@mixin font-family(){
+    font-family: 'Work Sans', sans-serif;
+}
+
+@mixin titleStyle(){
+    margin-left: 46px;
+    font-weight: map-get($font-weights, 'bold');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include font-family();
+}
+
+.card {
+    transform: scale(1.0);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid $black-color;
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+}
