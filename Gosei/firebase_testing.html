@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Testing</title>
+</head>
+
+<body>
+    
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="First name"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="Last name">
+        <label for="aAge">Age:</label><br>
+        <input type="text" id="aAge" name="Age">
+        <input id="submitButton" type="button" value="Submit" onclick="addUserFromFields()">
+    </form>
+
+    These are all our registered users:
+
+    <ul id="users_list">
+
+    </ul>
+
+    <script type="module" src="/Gosei/scripts/firebase_testing.js"></script>
+
+</body>
+
+</html>
