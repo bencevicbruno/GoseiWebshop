@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+
+.testingBox {
+    width: 750px;
+    height: 300px;
+    background-color: lightgray;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.testingBoxTitle {
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.testingBoxContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    text-align:left;
+}
+
+.testingBoxContent label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.testingBoxContent button {
+    margin-top: 5px;
+}
