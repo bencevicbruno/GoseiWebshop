@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+$black-color: #000000;
+$white-color: #FFFFFF;
+
+@mixin font-family(){
+    font-family: 'Work Sans', sans-serif;
+}
+
+@mixin titleStyle(){
+    margin-left: 46px;
+    font-weight: map-get($font-weights, 'bold');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @include font-family();
+}
+
+.card {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid $black-color;
+    }
+}
+
+.list-group-item {
+    & .active {
+        background-color: $green-color;
+        border: 1px solid $green-color;
+    }
+}

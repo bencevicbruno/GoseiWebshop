@@ -4,69 +4,255 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoseiHome</title>
+    <title>Gosei Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-</head>
+    <link rel="stylesheet" href="/Gosei/styles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  </head>
+
 <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6895b0;">
-        <div class="container">
-          <a class="navbar-brand" href="Index.html">GoseiWebshop</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-              <li class="nav-item">
-                <a class="nav-link active disabled" style="color: #FFC107;" href="#">Home</a>
-              </li>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/Gosei/Index.html">GoseiWebshop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
-              </li>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
 
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link active text-success disabled" aria-current="page" href="/Gosei/Index.html">Home</a>
+          </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Products
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Product 1</a></li>
-                  <li><a class="dropdown-item" href="#">Product 2</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Other Products</a></li>
-                </ul>
+          <li class="nav-item mx-1">
+            <a class="nav-link" href="/Gosei/AboutUs.html">About us</a>
+          </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.html">Login</a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a class="nav-link" href="Signup.html"> Sign up</a>
-                  </li>
+          <li class="nav-item mx-1">
+            <a class="nav-link" href="/Gosei/Products.html">Products</a>
+          </li>
 
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-warning" type="submit">Search</button>
-            </form>
+          <li class="nav-item mx-1">
+            <a class="nav-link" href="/Gosei/Contact.html">Contact</a>
+          </li>
+
+          <li class="nav-item mx-1">
+            <a class="nav-link" href="/Gosei/Login.html">Log In</a>
+          </li>
+
+          <li class="nav-item mx-1">
+            <a class="nav-link" href="#"><i class="bi bi-cart"></i><a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner rounded">
+        <div class="carousel-item">
+          <img src="/Gosei/assets/iphone13.png" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
           </div>
         </div>
-      </nav>
-
-      <div class="container">
-          <div class="moto mt-5">
-            <h1>Welcome to <span class="moto-outline-text" style="color: #FFC107;">GoseiWebshop.</span></h1>
+        <div class="carousel-item">
+          <img src="/Gosei/assets/fifth.jpg" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
           </div>
+        </div>
+        <div class="carousel-item active">
+          <img src="/Gosei/assets/sixth.jpg" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
       </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <div class="container">
+    <hr class="mt-5 w-100">
+  </div>
+
+  <div class="container d-flex align-items-baseline justify-content-between">
+    <h1 class="promotional-products mt-5">Promotional products</h1>
+    <a href="/Gosei/Products.html" class="see-all-promotional-products text-decoration-none text-dark">See all</a>
+  </div>
+
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/first.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone X</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/second.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone X</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/third.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 11</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/fourth.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 12</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/fifth.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 13</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <hr class="mt-5 w-100">
+  </div>
+
+  <div class="container d-flex align-items-baseline justify-content-between">
+    <h1 class="product-categories mt-5">Shop by categories</h1>
+    <a href="/Gosei/Product.html" class="see-all-categories text-decoration-none text-dark">See all</a>
+  </div>
+
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/first.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone X</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/second.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone X</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/third.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 11</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/fourth.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 12</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src="/Gosei/assets/fifth.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">iPhone 13</h5>
+        <p class="card-text">Our best iPhone yet.</p>
+        <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">Take a look</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-section mt-5 mb-5">
+
+    <div class="container d-flex justify-content-center">
+
+    <div class="container first-container mt-5 text-center">
+      <h2 class="footer-title">GoseiWebshop</h1>
+      <h4 class="footer-second-title">Sign up to our newsletter!</h4>
+      <p class="footer-paragraph">Be the first to know our special offers, new products launches and events!</p>
+
+      <form action="#">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control newsletter-input" placeholder="Email address" aria-label="Email address" aria-describedby="email-button" required>
+          <button class="btn btn-outline-secondary newsletter-button" type="submit" id="email-button"><i class="bi bi-send"></i></button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container second-container mt-5 text-center">
+      <a href="#" class="text-decoration-none text-dark"><h4 class="category">Categories</h4></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="first-category">Category 1</h5></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="second-category">Category 2</h5></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="third-category">Category 3</h5></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="fourth-category">Category 4</h5></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="fifth-category">Category 5</h5></a>
+    </div>
+
+    <div class="container third-container mt-5 text-center">
+      <a href="#" class="text-decoration-none text-dark"><h4 class="help">Help</h4></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="first-help">How do we work?</h5></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="second-help">Product problems</h5></a>
+      <a href="#" class="text-decoration-none text-dark"><h5 class="third-help">User support</h5></a>
+    </div>
+
+    <div class="container fourth-container mt-5 text-center">
+      <h4 class="follow">Follow us</h4>
+      <a href="#" class="text-decoration-none text-dark text-center"><i class="bi bi-instagram me-2"></i>Instagram</a>
+      <div><a href="#" class="text-decoration-none text-dark text-center"><i class="bi bi-facebook me-2"></i>Facebook</a></div>
+    </div>
+
+  </div>
+
+  </div>
+
+  <script src="/Gosei/scripts/index.js"></script>
 
 </body>
 </html>
