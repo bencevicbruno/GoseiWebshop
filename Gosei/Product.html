@@ -50,12 +50,12 @@
     <div class="container header-container d-flex justify-content-center">
 
         <div class="first-container">
-            <img src="/Gosei/assets/iphone-picture.jpg" class="hover-picture"/>
+            <img src="/Gosei/assets/iphone-picture.jpg" class="main-picture active"/>
             
             <div class="second-container d-flex mx-5">
-                <img src="/Gosei/assets/iphone-picture.jpg" width="75" height="75"/>
-                <img src="/Gosei/assets/iphone-picture.jpg" width="75" height="75"/>
-                <img src="/Gosei/assets/iphone-picture.jpg" width="75" height="75"/>
+                <img src="/Gosei/assets/iphone-picture.jpg" class="first" width="75" height="75"/>
+                <img src="/Gosei/assets/iphone-picture1.png" class="second" width="75" height="75"/>
+                <img src="/Gosei/assets/iphone-picture2.jpg" class="third" width="75" height="75"/>
             </div>
         </div>
 
@@ -68,7 +68,7 @@
             <div class="input-group mt-5 mx-5">
                 <button class="btn decrement btn-outline-dark" type="button" id="button-addon1">-</button>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" placeholder="1" aria-describedby="button-addon">
+                    <input type="number" class="form-control" value="1" aria-describedby="button-addon" min="1" step="1">
                 </div>
                 <button class="btn increment btn-outline-dark" type="button" id="button-addon2">+</button>
             </div>
@@ -80,12 +80,12 @@
     </div>
 
     <div class="container titles-container d-flex mt-5 justify-content-evenly">
-        <button class="btn"><h4 class="description-title active">Description</h4></button>
-        <button class="btn"><h4 class="shipping-info-title">Shipping info</h4></button>
-        <button class="btn"><h4 class="payment-options-title">Payment options</h4></button>
+        <button class="btn-description active"><h4 class="description-title">Description</h4></button>
+        <button class="btn-shipping"><h4 class="shipping-info-title">Shipping info</h4></button>
+        <button class="btn-payment"><h4 class="payment-options-title">Payment options</h4></button>
     </div>
 
-    <div class="container product-text mt-5 mb-5 w-50">
+    <div class="container description product-text mt-5 mb-5 w-50">
         <p class="text mx-3" style="width: 96%;">
             The iPhone 13 Pro is Apple's smaller premium iPhone with a 6.1" 
             screen size and for the first time in an iPhone, it comes with 
@@ -114,6 +114,42 @@
             scrolling. The list of innovations includes a more capable 
             triple camera setup, with a wide, ultra-wide and zoom cameras, 
             as well as a LiDAR scanner.
+        </p>
+    </div>
+
+    <div class="container shipping-info product-text mt-5 mb-5 w-50">
+        <p class="text mx-3" style="width: 96%;">
+            The iPhone 13 Pro is Apple's smaller premium iPhone with a 6.1" 
+            screen size and for the first time in an iPhone, it comes with 
+            a 120Hz ProMotion display for super smooth scrolling. The list 
+            of innovations includes a more capable triple camera setup, 
+            with a wide, ultra-wide and zoom cameras, as well as a LiDAR 
+            scanner.The iPhone 13 Pro is Apple's smaller premium iPhone 
+            with a 6.1" screen size and for the first time in an iPhone, 
+            it comes with a 120Hz ProMotion display for super smooth 
+            scrolling. The list of innovations includes a more capable 
+            triple camera setup, with a wide, ultra-wide and zoom cameras, 
+            as well as a LiDAR scanner.
+        </p>
+    </div>
+
+    <div class="container payment-options product-text mt-5 mb-5 w-50">
+        <p class="text mx-3" style="width: 96%;">
+            The iPhone 13 Pro is Apple's smaller premium iPhone with a 6.1" 
+            screen size and for the first time in an iPhone, it comes with 
+            a 120Hz ProMotion display for super smooth scrolling. The list 
+            of innovations includes a more capable triple camera setup, 
+            with a wide, ultra-wide and zoom cameras, as well as a LiDAR scanner. 
+            The iPhone 13 Pro is Apple's smaller premium iPhone with a 6.1" 
+            screen size and for the first time in an iPhone, it comes with 
+            a 120Hz ProMotion display for super smooth scrolling. The list 
+            of innovations includes a more capable triple camera setup, with 
+            a wide, ultra-wide and zoom cameras, as well as a LiDAR scanner. 
+            The iPhone 13 Pro is Apple's smaller premium iPhone with a 6.1" 
+            screen size and for the first time in an iPhone, it comes with a 
+            120Hz ProMotion display for super smooth scrolling. The list of 
+            includes a more capable triple camera setup, with a wide, 
+            -wide and zoom cameras, as well as a LiDAR scanner.
         </p>
     </div>
 
@@ -234,6 +270,8 @@
       </div>
     
       </div>
+
+      <script src="/Gosei/scripts/product.js"></script>
 
 </body>
 </html>
