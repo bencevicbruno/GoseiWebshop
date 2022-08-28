@@ -69,7 +69,7 @@ function setupPromotionalProducts() {
     const database = getFirestore()
     const collectionRef = collection(database, "products")
 
-    function createProductHTML(imageURL, title, description, price) {
+    function createProductHTML(imageURL, title, description, price, productID) {
         const imageURLplaceholder = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/440px-Grosser_Panda.JPG"
         return `
         <div class="card mx-2" style="width: 18rem;">
@@ -77,7 +77,7 @@ function setupPromotionalProducts() {
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <p class="card-text">${description}</p>
-          <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
+          <a href="/Gosei/Product.html?productID=${productID}" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
         </div>
       </div>`
     }
@@ -93,7 +93,7 @@ function setupPromotionalProducts() {
 
         for (let i = 0; i < 5; i++) {
             let item = data[Math.floor(Math.random()*data.length)];
-            productItemsContainer.innerHTML += createProductHTML("", item.name, item.subtitle, item.price)
+            productItemsContainer.innerHTML += createProductHTML("", item.name, item.subtitle, item.price, item.id)
         }
 
         data.forEach(item => {
