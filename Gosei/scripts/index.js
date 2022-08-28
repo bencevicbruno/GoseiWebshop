@@ -18,8 +18,7 @@ newsletterForm.addEventListener('submit', function (e) {
     newsletterForm.value = '';
 });
 
-window.onload = function () {
-    initializeApp(firebaseConfig);
+function setupCarousel() {
     const database = getFirestore()
     const collectionRef = collection(database, "index_slider")
 
@@ -62,51 +61,66 @@ window.onload = function () {
         
     })
     .catch(error => {
-        alert(error)
+        alert("Error fetching carousel data:\n" + error)
     })
+}
 
-    // collection("index_slider")
-    // .get()
-    // .then((querySnapshot) => {
-    //     querySnapshot.forEach((doc) => {
-    //         console.log(`${doc.id} => ${doc.data()}`);
-    //     });
-    // });
-    // get(child(databaseRef, "index_slider")).then((snapshot) => {
-    //     if (snapshot.exists()) {
-    //       console.log(snapshot.val())
-    //     } else {
-    //         alert("no data found")
-    //     }
-    // })
-    // .catch((error) => {
-    //     alert(error)
-    // })
+function setupPromotionalProducts() {
+    const database = getFirestore()
+    const collectionRef = collection(database, "products")
 
-    // Get a database reference to our posts
-    
-    //const reference = database.ref('index_slider');
+    function createProductHTML(imageURL, title, description, price) {
+        const imageURLplaceholder = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/440px-Grosser_Panda.JPG"
+        return `
+        <div class="card mx-2" style="width: 18rem;">
+        <img class="card-img-top" src="${imageURLplaceholder}" alt="${title}">
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <p class="card-text">${description}</p>
+          <a href="/Gosei/Product.html" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
+        </div>
+      </div>`
+    }
 
-    // Attach an asynchronous callback to read the data at our posts reference
-    // reference.on('value', (snapshot) => {
-    //     console.log(snapshot.val());
-    // }, (errorObject) => {
-    //     console.log('The read failed: ' + errorObject.name);
-    // });
+    getDocs(collectionRef)
+    .then(snapshot => {
+        let data = snapshot.docs.map(doc => {
+            return doc.data()
+        })
 
-    // listAll(listRef)
-    //     .then((res) => {
-    //         const imagePaths = res.items.map(item => item._location.path)
-    //         let didSetFirstImageActive = false
+        console.log(data)
+        let productItemsContainer = document.getElementById("product_items_container")
 
-    //         imagePaths.forEach(path => {
-    //             getDownloadURL(ref(storage, path))
-    //                 .then(url => {
-                        // let carouselItemsContainer = document.getElementById("container_carousel_items")
-                        // carouselItemsContainer.innerHTML = carouselItemsContainer.innerHTML + createCarouselItemHTML(url, !didSetFirstImageActive)
-                        // didSetFirstImageActive = true
-                        // console.log(createCarouselItemHTML(url))
-    //                 })
-    //         })
-    //     })
+        for (let i = 0; i < 5; i++) {
+            let item = data[Math.floor(Math.random()*data.length)];
+            productItemsContainer.innerHTML += createProductHTML("", item.name, item.subtitle, item.price)
+        }
+
+        data.forEach(item => {
+            
+        })
+
+        // for (let i = 0; i < data.length; i++) {
+        //     let item = data[i]
+        //     const itemHTML = createCarouselItemHTML(i == 0, item.image_url, item.title, item.description)
+        //     carouselItemsContainer.innerHTML += itemHTML
+        // }
+
+        // let carouselButtonsContainer = document.getElementById("carousel-indicators-container")
+
+        // for (let i = 0; i < data.length; i++) {
+        //     carouselButtonsContainer.innerHTML += createCarouselButtonHTML(i == 0, i, (i + 1) % data.length)
+        // }
+
+        
+    })
+    .catch(error => {
+        alert("Error fetching promotional products data:\n" + error)
+    })
+}
+
+window.onload = function () {
+    initializeApp(firebaseConfig);
+    setupCarousel()
+    setupPromotionalProducts()
 }
