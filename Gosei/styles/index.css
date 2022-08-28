@@ -5,6 +5,15 @@
   font-family: "Work Sans", sans-serif;
 }
 
+#container_carousel_items {
+  aspect-ratio: 16/9;
+}
+
+#carousel-img {
+  aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
 .navbar {
   background-color: #DDDDDD;
 }
