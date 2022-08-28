@@ -101,6 +101,23 @@ decrement.addEventListener('click', function(e){
     }
 })
 
+// Switch image on hover
+
+document.getElementById("product_image_1").onmouseover = function() {
+    let src = document.getElementById("product_image_1").src
+    document.getElementById("product_image").src = src
+};
+
+document.getElementById("product_image_2").onmouseover = function() {
+    let src = document.getElementById("product_image_2").src
+    document.getElementById("product_image").src = src
+};
+
+document.getElementById("product_image_3").onmouseover = function() {
+    let src = document.getElementById("product_image_3").src
+    document.getElementById("product_image").src = src
+};
+
 // Firebase implementation
 
 window.onload = function () {
