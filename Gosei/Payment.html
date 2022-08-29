@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Gosei/styles/payment.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Payment</title>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #DDDDDD;">
+        <div class="container">
+          <a class="navbar-brand" href="/Gosei/Index.html">GoseiWebshop</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <li class="nav-item">
+                <a class="nav-link" href="/Gosei/Index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active disabled" style="color: #198754;" href="Login.html">Payment</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="cart-view-container container">
+        <h4 class="mx-5 mt-5">Payment</h4>
+        <hr class="first-line">
+      </div>
+
+      <div class="container">
+      <div class="accordion" id="accordionExample">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Pay by card
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+
+                <div class="container">
+                    <div class="row  d-flex justify-content-center">
+                      <div class="col-sm-4">
+                        <form>
+                            <div class="mb-3">
+                              <label for="card-number" class="form-label">Card number</label>
+                              <input type="tel" class="form-control" id="card-number" required>
+                              <div id="emailHelp" class="form-text">Please enter 16 digits.</div>
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="expiration-date" class="form-label">Expiration date</label>
+                              <input type="month" class="form-control" id="expiration-date" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cvv" required>
+                              </div>
+
+                            <button type="submit" class="btn btn-outline-success">Add card and pay</button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Pay at arival
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p>You can pay at package arival.</p>
+              <strong>Total amount is 999$.</strong>
+              <div class="payment-button mt-3">
+                <form action="#">
+                <button type="submit" class="btn btn-outline-success">Pay at arival</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="/Gosei/scripts/checkout.js"></script>
+
+</body>
+</html>
