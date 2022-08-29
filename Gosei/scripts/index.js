@@ -72,6 +72,7 @@ function setupPromotionalProducts() {
     function createProductHTML(imageURL, title, description, price, productID) {
         const imageURLplaceholder = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/440px-Grosser_Panda.JPG"
         return `
+        <a href="/Gosei/Product.html?productID=${productID}" style="text-decoration: none; color: #000000;">
         <div class="card mx-2" style="width: 18rem;">
         <img class="card-img-top" src="${imageURLplaceholder}" alt="${title}">
         <div class="card-body">
@@ -79,7 +80,8 @@ function setupPromotionalProducts() {
           <p class="card-text">${description}</p>
           <a href="/Gosei/Product.html?productID=${productID}" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
         </div>
-      </div>`
+      </div>
+      </a>`
     }
 
     getDocs(collectionRef)
