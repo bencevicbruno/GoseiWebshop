@@ -1,12 +1,15 @@
 .container .cart-container {
   border: 1px solid #FFFFFF;
-  width: 100%;
+  width: 75%;
   height: 100%;
-  box-shadow: 0px 0px 8px #E4E4E4;
   border-radius: 5px;
+  box-shadow: 0px 0px 8px #C0C0C0;
 }
 .container .cart-container .product-elements {
   font-weight: 600;
+}
+.container .cart-container .product-elements .product-total {
+  font-weight: 700;
 }
 .container .cart-container img {
   border-radius: 5px;

@@ -29,38 +29,19 @@
 
 .bottom-section {
   width: 100%;
-  height: 350px;
+  height: 100%;
   background-color: #DDDDDD;
+  padding-bottom: 45px;
 }
-.bottom-section .second-container .category:hover {
-  text-decoration: underline;
+.bottom-section .container .first-container {
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #909090;
 }
-.bottom-section .second-container .first-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .second-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .third-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .fourth-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .fifth-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .help:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .first-help:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .second-help:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .third-help:hover {
-  text-decoration: underline;
+.bottom-section .container .second-container {
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #909090;
 }
 
 .card {

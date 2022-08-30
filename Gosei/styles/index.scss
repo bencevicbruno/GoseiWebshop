@@ -15,6 +15,12 @@ $font-weights:(
     font-weight: map-get($font-weights, 'bold');
 }
 
+@mixin bottomSectionStyle(){
+    border: 1px solid $gray-background;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px $gray-color;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -44,70 +50,17 @@ $font-weights:(
 
 .bottom-section {
     width: 100%;
-    height: 350px;
+    height: 100%;
     background-color: $gray-background;
+    padding-bottom: 45px;
 
-    & .second-container {
-        & .category {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    
-        & .first-category {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    
-        & .second-category {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    
-        & .third-category {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    
-        & .fourth-category {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    
-        & .fifth-category {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
-
-    & .third-container {
-        & .help {
-            &:hover {
-                text-decoration: underline;
-            }
+    & .container {
+        & .first-container {
+            @include bottomSectionStyle();
         }
 
-        & .first-help {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        & .second-help {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-
-        & .third-help {
-            &:hover {
-                text-decoration: underline;
-            }
+        & .second-container {
+            @include bottomSectionStyle();
         }
     }
 }

@@ -10,14 +10,6 @@ const firebaseConfig = {
     appId: "1:646725937170:web:99103f4bc691daf5bad0cb"
   };
 
-// Karlov dio za nesta
-const newsletterForm = document.querySelector('.newsletter-input');
-newsletterForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    newsletterForm.value = '';
-});
-
 function setupCarousel() {
     const database = getFirestore()
     const collectionRef = collection(database, "index_slider")

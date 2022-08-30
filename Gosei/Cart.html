@@ -39,22 +39,28 @@
         <h4 class="mx-5 mt-5">Shopping cart</h4>
         <hr class="first-line">
 
-        <div class="container cart-container mt-5">
-            <div class="product-elements container d-flex">
-                <img class="product-image mt-4 mx-3 mb-3" src="/Gosei/assets/iphone-picture1.png" width="180" height="210">
-                <div class="product-title col-md-3 mt-4 mx-5">Apple iPhone 13 128GB Green</div>
-                <div class="product-price col-md-1 mt-4 mx-5">Price: 999$</div>
-                <div class="product-quantity col-md-1 mt-4 mx-5">Quantity: 1</div>
-                <div class="product-total col-md-1 mt-4 mx-5">Total: 999$</div> 
+        <div class="container cart-container d-flex align-items-center">
+            <div class="container">
+                <img class="product-image mx-3" src="/Gosei/assets/iphone-picture1.png" width="180" height="210">
             </div>
-
-            <hr class="line-between">
-
-            <h6 class="empty-cart mt-4 mx-4 mb-4">Your shopping cart is empty.</h6> 
+            <div class="product-elements container">
+                <div class="product-title col-md-12 mt-2 mb-2">Apple iPhone 13 128GB Green</div>
+                <div class="product-price col-md-12 mt-2 mb-2">Price: 999$</div>
+                <div class="product-quantity col-md-12 mt-2 mb-2">Quantity: 1</div>
+                <div class="product-total col-md-12 mt-4 mb-2">Total: 999$</div> 
+            </div>
+            <div class="remove-button-container container d-flex align-items-center justify-content-end">
+              <button type="button" class="remove-button btn-close" aria-label="Close"></button>
+            </div>
         </div>
 
+        <hr class="line-between-products">
+
+        <h6 class="empty-cart mt-4 mx-4 mb-4">Your shopping cart is empty.</h6> 
+
         <div class="chekout-button-container container d-flex justify-content-end">
-            <a href="/Gosei/Checkout.html"><button class="product-checkout btn btn-outline-success mb-3 mx-4 mt-3">Checkout</button></a>
+          <a href="/Gosei/Index.html"><button class="continue-shopping btn btn-outline-success mb-3 mx-2 mt-3">Continue shopping</button></a>
+          <a href="/Gosei/Checkout.html"><button class="product-checkout btn btn-outline-success mb-3 mx-2 mt-3">Checkout</button></a>
         </div>
       </div>
 
