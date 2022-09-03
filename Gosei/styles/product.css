@@ -55,38 +55,19 @@ a:hover {
 
 .bottom-section {
   width: 100%;
-  height: 350px;
-  background-color: #C0C0C0;
+  height: 100%;
+  background-color: #DDDDDD;
+  padding-bottom: 45px;
 }
-.bottom-section .second-container .category:hover {
-  text-decoration: underline;
+.bottom-section .container .first-container {
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #909090;
 }
-.bottom-section .second-container .first-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .second-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .third-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .fourth-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .second-container .fifth-category:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .help:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .first-help:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .second-help:hover {
-  text-decoration: underline;
-}
-.bottom-section .third-container .third-help:hover {
-  text-decoration: underline;
+.bottom-section .container .second-container {
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #909090;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -96,7 +77,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .main-picture {
-  max-height: 400px;
   transform: scale(1);
   transition: all 0.3s ease-in-out;
 }

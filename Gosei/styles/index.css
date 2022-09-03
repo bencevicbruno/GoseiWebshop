@@ -47,20 +47,10 @@
 .card {
   transform: scale(1);
   transition: all 0.3s ease-in-out;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
 }
 .card:hover {
   cursor: pointer;
   border: 1px solid #000000;
-}
-
-.card-img-top {
-  aspect-ratio: 1;
-  padding: 10px;
 }
 
 .newsletter-button:hover {

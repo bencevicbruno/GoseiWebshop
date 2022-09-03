@@ -66,11 +66,11 @@ function setupPromotionalProducts() {
         return `
         <a href="/Gosei/Product.html?productID=${productID}" style="text-decoration: none; color: #000000;">
             <div class="card mx-2" style="width: 18rem;">
-                <img class="card-img-top" src="${imageURL}" alt="${title}">
-                <div class="card-body">
-                    <h5 class="card-title">${title}</h5>
-                    <p class="card-text">${description}</p>
-                    <a href="/Gosei/Product.html?productID=${productID}" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
+                <img class="card-img-top p-2" src="${imageURL}" alt="${title}" width="300" height="250">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title mt-1 mb-1">${title}</h5>
+                    <p class="card-text mt-1 mb-1">${description}</p>
+                    <a href="/Gosei/Product.html?productID=${productID}" class="btn btn-outline-success d-flex justify-content-center mt-auto">${price} $</a>
                 </div>
             </div>
         </a>`
@@ -80,7 +80,7 @@ function setupPromotionalProducts() {
         return `
         <a href="/Gosei/Products.html?category=${title}" style="text-decoration: none; color: #000000;">
         <div class="card mx-2" style="width: 18rem;">
-            <img class="card-img-top" src="${imageURL}" alt="Card image cap">
+            <img class="card-img-top p-2" src="${imageURL}" alt="Card image cap" width="300" height="250">
             <div class="card-body">
                 <a href="/Gosei/Products.html?category=${title}" class="btn btn-outline-success d-flex justify-content-center">${title}</a>
             </div>

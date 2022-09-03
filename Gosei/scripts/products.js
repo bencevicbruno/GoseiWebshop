@@ -26,7 +26,7 @@ function setupProducts() {
 
     function createSideButtonHTML(title, isActive) {
         return `
-            <button id="side_button_${title}"
+            <button style="" id="side_button_${title}"
                     type="button"
                     class="list-group-item list-group-item-action ${isActive ? "active" : ""}" ${isActive ? 'aria-current="true"' : ''}>
                 ${title}
@@ -45,7 +45,7 @@ function setupProducts() {
 
         return ` 
             <a href="/Gosei/Product.html?productID=${productID}" class="product-page text-decoration-none">
-                <div class="card mt-5 w-100" style="margin: 0 auto; color: #000000;">
+                <div class="card mt-5 w-100 mb-5" style="margin: 0 auto; color: #000000;">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="${imageURL}" class="img-fluid rounded-start" alt="#">
