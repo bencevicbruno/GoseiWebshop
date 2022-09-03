@@ -8,7 +8,7 @@ const firebaseConfig = {
     storageBucket: "goseiwebshop.appspot.com",
     messagingSenderId: "646725937170",
     appId: "1:646725937170:web:99103f4bc691daf5bad0cb"
-  };
+};
 
 function setupCarousel() {
     const database = getFirestore()
@@ -31,30 +31,30 @@ function setupCarousel() {
     }
 
     getDocs(collectionRef)
-    .then(snapshot => {
-        let data = snapshot.docs.map(doc => {
-            return doc.data()
+        .then(snapshot => {
+            let data = snapshot.docs.map(doc => {
+                return doc.data()
+            })
+
+            let carouselItemsContainer = document.getElementById("container_carousel_items")
+
+            for (let i = 0; i < data.length; i++) {
+                let item = data[i]
+                const itemHTML = createCarouselItemHTML(i == 0, item.image_url, item.title, item.description)
+                carouselItemsContainer.innerHTML += itemHTML
+            }
+
+            let carouselButtonsContainer = document.getElementById("carousel-indicators-container")
+
+            for (let i = 0; i < data.length; i++) {
+                carouselButtonsContainer.innerHTML += createCarouselButtonHTML(i == 0, i, (i + 1) % data.length)
+            }
+
+
         })
-
-        let carouselItemsContainer = document.getElementById("container_carousel_items")
-
-        for (let i = 0; i < data.length; i++) {
-            let item = data[i]
-            const itemHTML = createCarouselItemHTML(i == 0, item.image_url, item.title, item.description)
-            carouselItemsContainer.innerHTML += itemHTML
-        }
-
-        let carouselButtonsContainer = document.getElementById("carousel-indicators-container")
-
-        for (let i = 0; i < data.length; i++) {
-            carouselButtonsContainer.innerHTML += createCarouselButtonHTML(i == 0, i, (i + 1) % data.length)
-        }
-
-        
-    })
-    .catch(error => {
-        alert("Error fetching carousel data:\n" + error)
-    })
+        .catch(error => {
+            alert("Error fetching carousel data:\n" + error)
+        })
 }
 
 function setupPromotionalProducts() {
@@ -65,52 +65,63 @@ function setupPromotionalProducts() {
         const imageURLplaceholder = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/440px-Grosser_Panda.JPG"
         return `
         <a href="/Gosei/Product.html?productID=${productID}" style="text-decoration: none; color: #000000;">
+            <div class="card mx-2" style="width: 18rem;">
+                <img class="card-img-top" src="${imageURL}" alt="${title}">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-text">${description}</p>
+                    <a href="/Gosei/Product.html?productID=${productID}" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
+                </div>
+            </div>
+        </a>`
+    }
+
+    function createCategoryHTML(title, imageURL) {
+        return `
+        <a href="/Gosei/Products.html?category=${title}" style="text-decoration: none; color: #000000;">
         <div class="card mx-2" style="width: 18rem;">
-        <img class="card-img-top" src="${imageURLplaceholder}" alt="${title}">
-        <div class="card-body">
-          <h5 class="card-title">${title}</h5>
-          <p class="card-text">${description}</p>
-          <a href="/Gosei/Product.html?productID=${productID}" class="btn btn-outline-success d-flex justify-content-center">${price} $</a>
+            <img class="card-img-top" src="${imageURL}" alt="Card image cap">
+            <div class="card-body">
+                <a href="/Gosei/Products.html?category=${title}" class="btn btn-outline-success d-flex justify-content-center">${title}</a>
+            </div>
         </div>
-      </div>
-      </a>`
+        </a>`
     }
 
     getDocs(collectionRef)
-    .then(snapshot => {
-        let data = snapshot.docs.map(doc => {
-            return doc.data()
+        .then(snapshot => {
+            let data = snapshot.docs.map(doc => {
+                return doc.data()
+            })
+
+            let productItemsContainer = document.getElementById("product_items_container")
+
+            for (let i = 0; i < 5; i++) {
+                let item = data[Math.floor(Math.random() * data.length)];
+                productItemsContainer.innerHTML += createProductHTML(item.imageURL, item.name, item.subtitle, item.price, item.id)
+            }
+
+            const categories = new Array()
+            const categoryImages = []
+
+            data.forEach(item => {
+                const category = item.category
+
+                if (!categories.includes(category)) {
+                    categories.push(category)
+                    categoryImages.push(item.imageURL)
+                }
+            })
+
+            let categoriesContainer = document.getElementById("container_categories")
+
+            for (let i = 0; i < categories.length; i++) {
+                categoriesContainer.innerHTML += createCategoryHTML(categories[i], categoryImages[i])
+            }
         })
-
-        console.log(data)
-        let productItemsContainer = document.getElementById("product_items_container")
-
-        for (let i = 0; i < 5; i++) {
-            let item = data[Math.floor(Math.random()*data.length)];
-            productItemsContainer.innerHTML += createProductHTML("", item.name, item.subtitle, item.price, item.id)
-        }
-
-        data.forEach(item => {
-            
+        .catch(error => {
+            alert("Error fetching promotional products data:\n" + error)
         })
-
-        // for (let i = 0; i < data.length; i++) {
-        //     let item = data[i]
-        //     const itemHTML = createCarouselItemHTML(i == 0, item.image_url, item.title, item.description)
-        //     carouselItemsContainer.innerHTML += itemHTML
-        // }
-
-        // let carouselButtonsContainer = document.getElementById("carousel-indicators-container")
-
-        // for (let i = 0; i < data.length; i++) {
-        //     carouselButtonsContainer.innerHTML += createCarouselButtonHTML(i == 0, i, (i + 1) % data.length)
-        // }
-
-        
-    })
-    .catch(error => {
-        alert("Error fetching promotional products data:\n" + error)
-    })
 }
 
 window.onload = function () {
