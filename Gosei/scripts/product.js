@@ -101,23 +101,6 @@ decrement.addEventListener('click', function(e){
     }
 })
 
-// Switch image on hover
-
-document.getElementById("product_image_1").onmouseover = function() {
-    let src = document.getElementById("product_image_1").src
-    document.getElementById("product_image").src = src
-};
-
-document.getElementById("product_image_2").onmouseover = function() {
-    let src = document.getElementById("product_image_2").src
-    document.getElementById("product_image").src = src
-};
-
-document.getElementById("product_image_3").onmouseover = function() {
-    let src = document.getElementById("product_image_3").src
-    document.getElementById("product_image").src = src
-};
-
 // Firebase implementation
 
 window.onload = function () {
@@ -160,9 +143,10 @@ function setupProductInfo() {
         console.log(itemData)
 
         document.getElementById("product_name").innerHTML = itemData.name
+        document.getElementById("product_image").src = itemData.imageURL
         document.getElementById("product_subtitle").innerHTML = itemData.subtitle
         document.getElementById("product_price").innerHTML = itemData.price + "$"
-        document.getElementById("product_description").innerHTML = itemData.desc
+        document.getElementById("product_description").innerHTML = itemData.description
 
         let specsTable = document.getElementById("product_specs")
         Object.keys(itemData.specs).forEach(key => {
