@@ -17,10 +17,6 @@ window.onload = function () {
     checkoutButton.onclick = checkout
 }
 
-function isFormValid() {
-
-}
-
 function checkout() {
     const accessToken = window.localStorage.getItem("access_token")
     if (accessToken == null) return
