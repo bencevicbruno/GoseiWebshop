@@ -45,12 +45,9 @@ input {
   text-align: justify;
 }
 
-a {
-  text-decoration: none;
-  color: #000000;
-}
-a:hover {
-  color: #000000;
+.container .history-button {
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
 }
 
 .bottom-section {
