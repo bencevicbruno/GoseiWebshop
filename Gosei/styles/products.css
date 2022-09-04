@@ -21,3 +21,7 @@
 .img-fluid {
   max-height: 250px;
 }
+
+.navbar {
+  background-color: #DDDDDD;
+}

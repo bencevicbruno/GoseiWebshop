@@ -99,31 +99,7 @@ decrement.addEventListener('click', function (e) {
 window.onload = function () {
     initializeApp(firebaseConfig);
     setupProductInfo()
-    toggleLogin()
     setupAddToCart()
-}
-
-function toggleLogin() {
-    let loginButton = document.getElementById("button_login")
-    let cartButton = document.getElementById("button_cart")
-    let logoutButton = document.getElementById("button_logout")
-
-    const isLoggedIn = window.localStorage.getItem("access_token") != "null"
-
-    if (isLoggedIn) {
-        loginButton.remove()
-        cartButton.style.display = "block"
-        logoutButton.style.display = "block"
-
-        logoutButton.onclick = function () {
-            window.localStorage.setItem("access_token", null);
-            document.location.reload()
-        }
-    } else {
-        loginButton.style.display = "block"
-        cartButton.remove()
-        logoutButton.remove()
-    }
 }
 
 function setupProductInfo() {
@@ -134,7 +110,8 @@ function setupProductInfo() {
     const productID = urlParams.get("productID")
 
     let loginLink = document.getElementById("link_login")
-    loginLink.href = "Login.html?endpoint=Product.html?productID=" + productID.toString()
+    if (loginLink != null)
+        loginLink.href = "Login.html?endpoint=Product.html?productID=" + productID.toString()
 
     function createTableRowHTML(key, value) {
         return `<tr>
@@ -199,7 +176,7 @@ function addToCart() {
 
     const database = getFirestore()
     const productsRef = doc(database, "user_carts", accessToken)
-    
+
     getDoc(productsRef)
         .then(snapshot => {
             let data = snapshot.data()
@@ -220,7 +197,7 @@ function addToCart() {
                 })
             }
             const cartRef = doc(collection(database, "user_carts"), accessToken)
-            
+
             setDoc(cartRef, data)
                 .then(() => {
                     alert("Successfully added item to cart")

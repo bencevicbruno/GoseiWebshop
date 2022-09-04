@@ -87,4 +87,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .second-container:hover {
   cursor: pointer;
-}/*# sourceMappingURL=product.css.map */
+}
+
+.navbar {
+  background-color: #DDDDDD;
+}
+/*# sourceMappingURL=product.css.map */

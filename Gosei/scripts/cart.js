@@ -27,6 +27,14 @@ function setupCart() {
         .then(snapshot => {
             if (snapshot.data() != null) {
                 fetchProducts(snapshot.data().products)
+
+                if (snapshot.data().products.length > 0) {
+                    let checkoutButton = document.getElementById("button_checkout")
+                    checkoutButton.style.display = "block"
+
+                    let checkoutLink = document.getElementById("link_checkout")
+                    checkoutLink.href = "/Gosei/Checkout.html"
+                }
             }
         })
         .catch(error => {

@@ -124,32 +124,8 @@ function setupPromotionalProducts() {
         })
 }
 
-function toggleLogin() {
-    let loginButton = document.getElementById("button_login")
-    let cartButton = document.getElementById("button_cart")
-    let logoutButton = document.getElementById("button_logout")
-
-    const isLoggedIn = window.localStorage.getItem("access_token") != "null"
-
-    if (isLoggedIn) {
-        loginButton.remove()
-        cartButton.style.display = "block"
-        logoutButton.style.display = "block"
-
-        logoutButton.onclick = function() {
-            window.localStorage.setItem("access_token", null);
-            document.location.reload()
-        }
-    } else {
-        loginButton.style.display = "block"
-        cartButton.remove()
-        logoutButton.remove()
-    }
-}
-
 window.onload = function () {
     initializeApp(firebaseConfig);
     setupCarousel()
     setupPromotionalProducts()
-    toggleLogin()
 }
