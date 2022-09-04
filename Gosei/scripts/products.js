@@ -71,6 +71,18 @@ function setupProducts() {
 
         let productsContainer = document.getElementById("container_products")
         productsContainer.innerHTML = categoryContent
+
+        categories.forEach(currentCategory => {
+            const shouldBeActive = currentCategory == category
+            let sideButton = document.getElementById("side_button_" + currentCategory)
+            
+            if (shouldBeActive) {
+                sideButton.classList.add("active")
+            } else {
+                sideButton.classList.remove("active")
+                //sideButton.attributes.removeNamedItem("aria-current=true")
+            }
+        })
     }
 
     getDocs(collectionRef)
