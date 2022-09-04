@@ -28,16 +28,15 @@ function login() {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            window.localStorage.setItem("access_token", user.uid);
             
-            window.localStorage.setItem("access_token", user.accessToken);
-
             const urlParams = new URLSearchParams(window.location.search);
             const endpoint = urlParams.get("endpoint")
 
             if (endpoint != null) {
                 location.href = endpoint
             } else {
-                location.href = "/index.html"
+                location.href = "/Gosei/index.html"
             }
         })
         .catch((error) => {

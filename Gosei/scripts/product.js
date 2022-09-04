@@ -1,6 +1,6 @@
 //import { setup } from "@grpc/grpc-js/build/src/channelz";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyDNnT8RViztz2dZi3BOVwVv8rX38XuNYw4",
@@ -9,7 +9,7 @@ const firebaseConfig = {
     storageBucket: "goseiwebshop.appspot.com",
     messagingSenderId: "646725937170",
     appId: "1:646725937170:web:99103f4bc691daf5bad0cb"
-  };
+};
 
 //increment button
 const increment = document.querySelector('.increment');
@@ -32,17 +32,10 @@ const shippingDiv = document.querySelector('.shipping-info');
 const paymentButton = document.querySelector('.btn-payment');
 const paymentDiv = document.querySelector('.payment-options');
 
-//product pictures
-/* potrebno mijenjati slike na klik? */
-const main = document.querySelector('.main-picture');
-const first = document.querySelector('.first');
-const second = document.querySelector('.second');
-const third = document.querySelector('.third');
-
 shippingDiv.style.display = 'none';
 paymentDiv.style.display = 'none';
 
-descriptionButton.addEventListener('click', function(e){
+descriptionButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     descriptionButton.classList.add('active');
@@ -54,7 +47,7 @@ descriptionButton.addEventListener('click', function(e){
     paymentDiv.style.display = 'none';
 })
 
-shippingButton.addEventListener('click', function(e){
+shippingButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     descriptionButton.classList.remove('active');
@@ -66,7 +59,7 @@ shippingButton.addEventListener('click', function(e){
     paymentDiv.style.display = 'none';
 })
 
-paymentButton.addEventListener('click', function(e){
+paymentButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     descriptionButton.classList.remove('active');
@@ -78,22 +71,22 @@ paymentButton.addEventListener('click', function(e){
     paymentDiv.style.display = '';
 })
 
-inputValue.addEventListener('change', function(e){
-    if(inputValue.value < 1){
+inputValue.addEventListener('change', function (e) {
+    if (inputValue.value < 1) {
         alert('Please choose correct quantity number!');
         inputValue.value = 1;
     }
 })
 
-increment.addEventListener('click', function(e){
+increment.addEventListener('click', function (e) {
     e.preventDefault();
     inputValue.value++;
 })
 
-decrement.addEventListener('click', function(e){
+decrement.addEventListener('click', function (e) {
     e.preventDefault();
-    
-    if(inputValue.value > 1){
+
+    if (inputValue.value > 1) {
         inputValue.value--;
     }
     else {
@@ -106,6 +99,31 @@ decrement.addEventListener('click', function(e){
 window.onload = function () {
     initializeApp(firebaseConfig);
     setupProductInfo()
+    toggleLogin()
+    setupAddToCart()
+}
+
+function toggleLogin() {
+    let loginButton = document.getElementById("button_login")
+    let cartButton = document.getElementById("button_cart")
+    let logoutButton = document.getElementById("button_logout")
+
+    const isLoggedIn = window.localStorage.getItem("access_token") != "null"
+
+    if (isLoggedIn) {
+        loginButton.remove()
+        cartButton.style.display = "block"
+        logoutButton.style.display = "block"
+
+        logoutButton.onclick = function () {
+            window.localStorage.setItem("access_token", null);
+            document.location.reload()
+        }
+    } else {
+        loginButton.style.display = "block"
+        cartButton.remove()
+        logoutButton.remove()
+    }
 }
 
 function setupProductInfo() {
@@ -115,8 +133,11 @@ function setupProductInfo() {
     const urlParams = new URLSearchParams(window.location.search);
     const productID = urlParams.get("productID")
 
+    let loginLink = document.getElementById("link_login")
+    loginLink.href = "Login.html?endpoint=Product.html?productID=" + productID.toString()
+
     function createTableRowHTML(key, value) {
-        return  `<tr>
+        return `<tr>
         <td>${key}</td>
         <td>${value}</td>
       </tr>`
@@ -125,35 +146,90 @@ function setupProductInfo() {
     if (productID == null) return
 
     getDocs(collectionRef)
-    .then(snapshot => {
-        let data = snapshot.docs.map(doc => {
-            return doc.data()
-        })
+        .then(snapshot => {
+            let data = snapshot.docs.map(doc => {
+                return doc.data()
+            })
 
-        console.log()
-        let itemData = null
-        data.forEach(item => {
-            if (item.id == productID) {
-                itemData = item
-                return
+            console.log()
+            let itemData = null
+            data.forEach(item => {
+                if (item.id == productID) {
+                    itemData = item
+                    return
+                }
+            })
+
+            if (itemData == null) return
+
+            document.getElementById("product_name").innerHTML = itemData.name
+            document.getElementById("product_image").src = itemData.imageURL
+            document.getElementById("product_subtitle").innerHTML = itemData.subtitle
+            document.getElementById("product_price").innerHTML = itemData.price + "$"
+            document.getElementById("product_description").innerHTML = itemData.description
+
+            let specsTable = document.getElementById("product_specs")
+            Object.keys(itemData.specs).forEach(key => {
+                specsTable.innerHTML += createTableRowHTML(key, itemData.specs[key])
+            })
+        })
+        .catch(error => {
+            alert("Error fetching carousel data:\n" + error)
+        })
+}
+
+function setupAddToCart() {
+    let cartButton = document.getElementById("button_add_to_cart")
+
+    cartButton.onclick = function () {
+        addToCart()
+    }
+}
+
+function addToCart() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productID = parseInt(urlParams.get("productID"))
+    if (productID == null) return
+
+    const accessToken = window.localStorage.getItem("access_token")
+    if (accessToken == null) return
+
+    let amountField = document.getElementById("field_amount")
+    let amount = parseInt(amountField.value)
+
+    const database = getFirestore()
+    const productsRef = doc(database, "user_carts", accessToken)
+    
+    getDoc(productsRef)
+        .then(snapshot => {
+            let data = snapshot.data()
+
+            let didUpdateValue = false
+            for (let i = 0; i < data.products.length; i++) {
+                if (parseInt(data.products[i].productID) == productID) {
+                    data.products[i].amount = parseInt(data.products[i].amount) + amount
+                    didUpdateValue = true
+                    break
+                }
             }
+
+            if (!didUpdateValue) {
+                data.products.push({
+                    productID: productID,
+                    amount: amount
+                })
+            }
+            const cartRef = doc(collection(database, "user_carts"), accessToken)
+            
+            setDoc(cartRef, data)
+                .then(() => {
+                    alert("Successfully added item to cart")
+                })
+                .catch(error => {
+                    alert("Error adding item to cart:\n" + error)
+                })
         })
-
-        if (itemData == null) return
-        console.log(itemData)
-
-        document.getElementById("product_name").innerHTML = itemData.name
-        document.getElementById("product_image").src = itemData.imageURL
-        document.getElementById("product_subtitle").innerHTML = itemData.subtitle
-        document.getElementById("product_price").innerHTML = itemData.price + "$"
-        document.getElementById("product_description").innerHTML = itemData.description
-
-        let specsTable = document.getElementById("product_specs")
-        Object.keys(itemData.specs).forEach(key => {
-            specsTable.innerHTML += createTableRowHTML(key, itemData.specs[key])
+        .catch(error => {
+            alert("Error fetching cart products data:\n" + error)
         })
-    })
-    .catch(error => {
-        alert("Error fetching carousel data:\n" + error)
-    })
 }

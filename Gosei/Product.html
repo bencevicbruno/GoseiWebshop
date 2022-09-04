@@ -30,14 +30,17 @@
                         <a class="nav-link" aria-current="page" href="/Gosei/Index.html">Home</a>
                     </li>
             
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="/Gosei/Login.html">Log In</a>
+                    <li id="button_login" class="nav-item mx-1" style="display: none">
+                        <a id="link_login" class="nav-link" href="/Gosei/Login.html">Log In</a>
                     </li>
             
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="#"><i class="bi bi-cart"></i><a>
+                    <li id="button_cart" class="nav-item mx-1" style="display: none">
+                        <a class="nav-link" href="/Gosei/Cart.html"><i class="bi bi-cart"></i><a>
                     </li>
 
+                    <li id="button_logout" class="nav-item mx-1" style="display: none">
+                        <a class="nav-link" href="#">Log Out</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -62,13 +65,13 @@
             <div class="input-group mt-5 mx-5">
                 <button class="btn decrement btn-outline-dark" type="button" id="button-addon1">-</button>
                 <div class="col-sm-2">
-                    <input type="number" class="form-control" value="1" aria-describedby="button-addon" min="1" step="1">
+                    <input id="field_amount" type="number" class="form-control" value="1" aria-describedby="button-addon" min="1" step="1">
                 </div>
                 <button class="btn increment btn-outline-dark" type="button" id="button-addon2">+</button>
             </div>
 
-            <button class="btn add-to-cart-button btn-outline-dark mt-4 mx-5">Add to cart</button>
-            <button class="btn buy-now-button btn-outline-dark mt-5 mx-5">Buy now</button>
+            <button id="button_add_to_cart" class="btn add-to-cart-button btn-outline-dark mt-4 mx-5">Add to cart</button>
+            <button id="button_buy" class="btn buy-now-button btn-outline-dark mt-5 mx-5">Buy now</button>
         </div>
 
     </div>
