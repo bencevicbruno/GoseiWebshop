@@ -56,11 +56,3 @@
 .newsletter-button:hover {
   cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
-
-.carousel-item {
-  aspect-ratio: 2;
-}
-
-.carousel-img {
-  aspect-ratio: 2;
-}
