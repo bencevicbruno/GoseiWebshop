@@ -36,10 +36,11 @@ function setupCart() {
 
 function createProductHTML(productData, amount) {
     return `
-    <a href="/Gosei/Product.html?productID=${productData.id}" style="text-decoration: none; color: #000000;">
     <div id="product_${productData.id}" class="container cart-container d-flex align-items-center">
         <div class="container">
-            <img class="product-image mx-3" src="${productData.imageURL}" width="180" height="210">
+            <a href="/Gosei/Product.html?productID=${productData.id}" style="text-decoration: none; color: #000000;">
+                <img class="product-image mx-3" src="${productData.imageURL}" width="180" height="210">
+            </a>
         </div>
         <div class="product-elements container">
             <div class="product-title col-md-12 mt-2 mb-2">${productData.name}</div>
@@ -51,7 +52,6 @@ function createProductHTML(productData, amount) {
         </div>
     </div>
     <hr class="line-between-products">
-    </a>
     `
 }
 
