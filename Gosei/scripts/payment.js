@@ -49,7 +49,7 @@ function checkout() {
 
     setDoc(cartRef, { products: [] })
         .then(() => {
-            alert("Payment successfull!")
+            alert('Thank you for your order!')
             location.href = "/Gosei/Index.html"
         })
         .catch(error => {
