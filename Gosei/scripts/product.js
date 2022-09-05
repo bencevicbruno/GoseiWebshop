@@ -205,7 +205,7 @@ function addToCart() {
 
             setDoc(cartRef, data)
                 .then(() => {
-                    alert("Successfully added item to cart")
+                    alert("Successfully added item to cart!")
                 })
                 .catch(error => {
                     alert("Error adding item to cart:\n" + error)
