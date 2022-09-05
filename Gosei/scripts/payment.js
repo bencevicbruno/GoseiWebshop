@@ -24,6 +24,8 @@ window.onload = function () {
 
     let payAtArrivalButton = document.getElementById("button_pay_at_arival")
     payAtArrivalButton.onclick = checkout
+
+    setupTotal()
 }
 
 function isNonEmpty(element) {
@@ -56,4 +58,42 @@ function checkout() {
             alert("Error adding item to cart:\n" + error)
         })
 
+}
+
+function setupTotal() {
+    const accessToken = window.localStorage.getItem("access_token")
+
+    const database = getFirestore()
+    const docRef = doc(database, "user_carts", accessToken);
+
+    getDoc(docRef)
+        .then(snapshot => {
+            if (snapshot.data() != null) {
+                const products = snapshot.data().products
+                const collectionRef = collection(database, "products")
+
+                getDocs(collectionRef)
+                    .then(snapshot => {
+                        let data = snapshot.docs.map(doc => doc.data())
+
+                        let total = 0
+                        data.forEach(item => {
+                            products.forEach(product => {
+                                if (item.id == product.productID) {
+                                    total += parseInt(item.price) * parseInt(product.amount)
+                                }
+                            })
+                        })
+
+                        let totalLabel = document.getElementById("label_total")
+                        totalLabel.innerHTML = "Your total is: <b>" + total + "$</b>"
+                    })
+                    .catch(error => {
+                        alert("Error fetching cart products data:\n" + error)
+                    })
+            }
+        })
+        .catch(error => {
+            alert("Error fetching cart:\n" + error)
+        })
 }

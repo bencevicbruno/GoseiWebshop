@@ -123,6 +123,17 @@ function fetchProducts(products) {
                 })
             })
 
+            let total = 0
+            data.forEach(item => {
+                products.forEach(product => {
+                    if (item.id == product.productID) {
+                        total += parseInt(item.price) * parseInt(product.amount)
+                    }
+                })
+            })
+
+            let totalLabel = document.getElementById("label_total")
+            totalLabel.innerHTML = "Your total is: <b>" + total + "$</b>"
         })
         .catch(error => {
             alert("Error fetching cart products data:\n" + error)
