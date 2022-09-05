@@ -18,7 +18,7 @@ window.onload = function () {
         if (checkFields()) {
             checkout()
         } else {
-            alert("Please insert card details")
+            alert("Please insert card details!")
         }
     }
 

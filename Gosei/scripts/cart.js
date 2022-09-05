@@ -100,6 +100,9 @@ function fetchProducts(products) {
     let label = document.getElementById("label_cart_empty")
     label.style.display = (products.length == 0) ? "block" : "none"
 
+    const checkoutButton = document.getElementById('button_checkout');
+    checkoutButton.style.display = products.length == 0 ? 'none' : 'block'
+
     const database = getFirestore()
     const collectionRef = collection(database, "products")
 

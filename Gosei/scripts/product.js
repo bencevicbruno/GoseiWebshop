@@ -158,9 +158,13 @@ function setupAddToCart() {
     const accessToken = window.localStorage.getItem("access_token")
 
     let cartButton = document.getElementById("button_add_to_cart")
+    let label = document.getElementById("label_login_to_buy")
+    let container = document.getElementById("container_buttons")
+    label.style.display = accessToken == "null" ? "block" : "none"
 
     if (accessToken == "null") {
         cartButton.style.display = "none"
+        container.style.display = "none"
     } else {
         cartButton.onclick = function () {
             addToCart()
@@ -205,7 +209,7 @@ function addToCart() {
 
             setDoc(cartRef, data)
                 .then(() => {
-                    alert("Successfully added item to cart")
+                    alert("Successfully added item to cart!")
                 })
                 .catch(error => {
                     alert("Error adding item to cart:\n" + error)
