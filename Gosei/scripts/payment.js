@@ -13,14 +13,17 @@ const firebaseConfig = {
 window.onload = function () {
     initializeApp(firebaseConfig);
 
-    let checkoutButton = document.getElementById("button_checkout")
-    checkoutButton.onclick = function() {
+    let addCardAndPayButton = document.getElementById("button_add_card_and_pay")
+    addCardAndPayButton.onclick = function () {
         if (checkFields()) {
-            location.href = "/Gosei/Payment.html"
+            checkout()
         } else {
-            alert("Please fill out the checkout form!")
+            alert("Please insert card details")
         }
     }
+
+    let payAtArrivalButton = document.getElementById("button_pay_at_arival")
+    payAtArrivalButton.onclick = checkout
 }
 
 function isNonEmpty(element) {
@@ -28,10 +31,28 @@ function isNonEmpty(element) {
 }
 
 function checkFields() {
-    const requiredElements = ["email", "first-name", "last-name", "address", "city", "zipcode", "country", "phone"]
+    const requiredElements = ["card-number", "expiration-date", "cvv"]
 
     return requiredElements
         .map(id => document.getElementById(id))
         .map(element => isNonEmpty(element))
         .every(item => item == true)
+}
+
+function checkout() {
+    const accessToken = window.localStorage.getItem("access_token")
+    if (accessToken == null) return
+
+    const database = getFirestore()
+
+    const cartRef = doc(collection(database, "user_carts"), accessToken)
+
+    setDoc(cartRef, { products: [] })
+        .then(() => {
+            location.href = "/Gosei/Payment.html"
+        })
+        .catch(error => {
+            alert("Error adding item to cart:\n" + error)
+        })
+
 }

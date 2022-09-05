@@ -155,10 +155,16 @@ function setupProductInfo() {
 }
 
 function setupAddToCart() {
+    const accessToken = window.localStorage.getItem("access_token")
+
     let cartButton = document.getElementById("button_add_to_cart")
 
-    cartButton.onclick = function () {
-        addToCart()
+    if (accessToken == "null") {
+        cartButton.style.display = "none"
+    } else {
+        cartButton.onclick = function () {
+            addToCart()
+        }
     }
 }
 
