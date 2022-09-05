@@ -17,7 +17,7 @@ function setupCarousel() {
     function createCarouselItemHTML(isActive, imageSource, title, description) {
         return `
         <div class="carousel-item ${isActive ? "active" : ""}">
-          <img src="${imageSource}" class="d-block w-100 carousel-img">
+          <img src="${imageSource}" class="d-block w-100 carousel-img" style="aspect-ratio: 2">
           <div class="carousel-caption d-none d-md-block">
             <h5>${title}</h5>
             <p>${description}</p>
