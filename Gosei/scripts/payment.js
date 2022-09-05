@@ -49,7 +49,8 @@ function checkout() {
 
     setDoc(cartRef, { products: [] })
         .then(() => {
-            location.href = "/Gosei/Payment.html"
+            alert("Payment successfull!")
+            location.href = "/Gosei/Index.html"
         })
         .catch(error => {
             alert("Error adding item to cart:\n" + error)
